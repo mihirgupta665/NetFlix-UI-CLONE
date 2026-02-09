@@ -1,0 +1,315 @@
+/* to get the fav icon remove domain and put favicon.ico and we will get icon of netflix */
+@import url('https://fonts.googleapis.com/css2?family=Martel+Sans:wght@200;300;400;600;700;800;900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0px;
+    /*  */
+    padding: 0px;
+    font-family: "Poppins"
+}
+
+body {
+    background-color: black;
+}
+
+.main {
+    background-image: url("Assets/images/bg.jpg");
+    background-position: center center;
+    background-size: max(2000px, 100vw);
+    background-repeat: no-repeat;
+    height: 70vh;
+    position: relative;
+}
+
+.main .box {
+    height: 70vh;
+    /* vh is not a relative height */
+    width: 100%;
+    /* 100% with respect to parent i.e. main */
+    opacity: 0.44;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: black;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* as width is not defined so resposivenss comes , when width us less the nav auto adjust */
+    max-width: 60vw;
+    margin: auto;
+    height: 100px;
+    /* by increasing the height the align content will don as its center comes down */
+}
+
+nav span img {
+    width: 130px;
+    /* height:50px; */
+    position: relative;
+    /* as it had a black translucent cover so to make it above all elements we can give it some z-index with position : relative (so that it could on its place)*/
+    z-index: 10;
+}
+
+nav button {
+    position: relative;
+    /* as it had a black translucent cover so to make it above all elements we can give it some z-index with position : relative (so that it could on its place)*/
+    z-index: 10;
+}
+
+.hero {
+    height: calc(100% - 100px);
+    /* calc function is there to calculate the size */
+    /* hero need to cover full div but 60 pixel from top was already covered by nac bar */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: white;
+    position: relative;
+    /* z-index:10; */
+    gap: 20px;
+    padding: 0px 20px;
+}
+
+.hero span {
+    font-family: "Martel Sans", sans-serif;
+    font-weight: 800;
+    font-style: normal;
+    /* position:relative; */
+
+
+}
+
+.hero> :nth-child(1) {
+    font-family: "Martel Sans";
+    font-size: 48px;
+    font-weight: 900;
+    text-align: center;
+}
+
+.hero> :nth-child(2) {
+    font-size: 24px;
+    font-weight: 400;
+    text-align: center;
+}
+
+.hero> :nth-child(3) {
+    font-size: 20px;
+    font-weight: 400;
+    text-align: center;
+}
+
+.separation {
+    height: 7px;
+    background-color: rgb(43, 43, 43);
+    position: relative;
+    z-index: 20;
+}
+
+.btn {
+    padding: 3px 8px;
+    font-weight: bold;
+    background-color: rgba(0, 0, 0, 0.259);
+    color: white;
+    opacity: 1px;
+    border-radius: 4px;
+    cursor: pointer;
+
+}
+
+.btn-red-sm {
+    background-color: red;
+    color: white;
+}
+
+.btn-red {
+    background-color: red;
+    color: white;
+    padding: 3px 24px;
+    font-size: 20px;
+    border-radius: 4px;
+}
+
+.main input {
+    color:white;
+    padding: 3px 24px;
+    font-size: 20px;
+    border-radius: 4px;
+    background-color: rgba(0, 0, 0, 0.085);
+    /* opacity:0.4; */
+    font-weight: 900;
+    border: 1px solid white;
+    /* color is already whit butu by writing white its z index becomes infinity  */
+}
+
+.main input::placeholder {
+    font-weight: 900;
+    /* opacity: 10; */
+    color: white;
+    /* color is already white but by writing white its z index becomes infinity  */
+
+
+}
+
+.first {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    max-width: 70vw;
+    color: white;
+}
+
+.secimg {
+    position: relative;
+}
+
+.first .secimg img {
+    width: 325px;
+    /*460-325=135*/
+    position: relative;
+    z-index: 10;
+}
+
+.secimg video {
+    position: absolute;
+    top: 85.5px;
+    right: 87px;
+    width: 226px;
+}
+
+.first>div {
+    display: flex;
+    flex-direction: column;
+    padding: 34px;
+}
+
+.first>div :first-child {
+    font-size: 48px;
+    font-weight: bolder;
+}
+
+.first>div :nth-child(2) {
+    font-size: 20px;
+}
+
+.thirdpc {
+    position: relative
+}
+
+.thirdpc video {
+    position: absolute;
+    z-index: 12;
+    width: 229px;
+    top: 67px;
+    right: 88px;
+}
+
+@media screen and (max-width:1121px) {
+    .first {
+        flex-wrap: wrap;
+        /* whenever width increases use flex wrap for responsiveness */
+    }
+}
+
+@media screen and (max-width:1121px) {
+    .hero :nth-child(1) {
+        font-size: 32px;
+    }
+
+    .hero :nth-child(2) {
+        font-size: 18px
+    }
+
+    .hero :nth-child(3) {
+        font-size: 18px
+    }
+
+    nav {
+        max-width: 83vw;
+    }
+
+    .main input {
+        width: 52vw;
+        margin-left: 72px;
+    }
+    .btn-red{
+        margin: 20px 110px;
+    }
+}
+
+.faq h2 {
+    text-align: center;
+    padding: 32px;
+    font-size: 48px;
+}
+
+.faq {
+    background-color: black;
+    color: white;
+}
+
+.faqbox {
+    display: flex;
+    background-color: rgb(37, 37, 37);
+    color: white;
+    padding: 25px;
+    max-width: 60vw;
+    margin: 34px auto;
+    justify-content: space-between;
+    /* space comes in between but both side padding could be visible */
+    cursor: pointer;
+    font-size: 24px;
+    transition: all 0.3s ease-out;
+}
+
+.faqbox:hover {
+    background-color: rgb(64, 63, 63);
+}
+
+.faqbox svg {
+    filter: invert(1);
+    /* filter:invert(1) changes color to white */
+}
+
+footer {
+    max-width: 60vw;
+    margin: auto;
+}
+
+footer span {
+    color: white;
+    display: inline-block;
+    margin: 20px 14px;
+}
+
+.footer {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    color: white;
+    padding: 14px;
+
+}
+
+.footer-item {
+    display: flex;
+    flex-direction: column;
+    gap: 23px
+}
+
+.footer a {
+    /* text-decoration:none; */
+    color: white;
+}
+
+@media screen and (max-width:1121px) {
+    .footer {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        color: white;
+        padding: 14px;
+        gap: 70px 0px;
+    }
+}
